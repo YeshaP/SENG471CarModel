@@ -4,8 +4,8 @@
   font-family: sans-serif;
 }
 
-.exterior{
-  width: 800px;
+.carpic{
+  width: 500px;
   height: auto;
 }
 
@@ -16,9 +16,11 @@
 
 .colourbutton{
   position: relative;
-  margin-left: 400px;
+
+  margin-left: 150px;
+  /*
   margin-right: 1000px;
-  margin-top: 250px;
+  margin-top: 250px; */
 }
 
 * {

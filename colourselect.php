@@ -12,22 +12,26 @@
 
   <div class="row">
     <div class="column">
-      <img src="https://media.wired.com/photos/59bafdf204afdc5248726f5c/master/w_2400,c_limit/BMW-TA.jpg" class="exterior" alt="exterior">
-    </div>
-    <div class="column">
+      <img src="https://media.wired.com/photos/59bafdf204afdc5248726f5c/master/w_2400,c_limit/BMW-TA.jpg" class="carpic" alt="exterior">
+      <br><br>
       <div class="colourbutton">
         <button onclick="changePics()">
            <img src="https://hoseco.com.au/chwp/wp-content/uploads/2018/03/Light-Blue-Box.jpg"
              alt="blue" class="colour"/>
-        </button><br><br>
-        <button onclick="changePics()">
-           <img src="https://hoseco.com.au/chwp/wp-content/uploads/2018/03/Light-Blue-Box.jpg"
-             alt="blue" class="colour"/>
-        </button><br><br>
+        </button>
         <button onclick="changePics()">
            <img src="https://hoseco.com.au/chwp/wp-content/uploads/2018/03/Light-Blue-Box.jpg"
              alt="blue" class="colour"/>
         </button>
+        <button onclick="changePics()">
+           <img src="https://hoseco.com.au/chwp/wp-content/uploads/2018/03/Light-Blue-Box.jpg"
+             alt="blue" class="colour"/>
+        </button>
+      </div>
+    </div>
+
+    <div class="column">
+      
       </div>
     </div>
   </div>
