@@ -3,7 +3,8 @@
 -- Host: localhost    Database: cadadb
 -- ------------------------------------------------------
 -- Server version	5.7.21-log
-
+create database if not exists cadadb;
+use cadadb;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
