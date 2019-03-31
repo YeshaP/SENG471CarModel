@@ -1,4 +1,4 @@
-function changePics() {
+function changePics(colour) {
   event.preventDefault();
 
   xmlhttp = new XMLHttpRequest();
@@ -10,8 +10,8 @@ function changePics() {
   };
   xmlhttp.open("POST","testscript.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("colour="+colorToHex(document.getElementById('colour').style.backgroundColor)
-                +"&name="+document.getElementById('colour'));
+  xmlhttp.send("colour="+colorToHex(document.getElementById(colour).style.backgroundColor)
+                +"&name="+colour);
   // xmlhttp.send("school="+document.getElementById("school").value+"&format="+document.getElementById("format").value);
 }
 

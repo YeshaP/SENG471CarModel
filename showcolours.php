@@ -1,19 +1,21 @@
 <?php
 require_once "connectdb.php";
-$sql = "SELECT * FROM exterior WHERE modelnum =".$_POST['modelnum'];
+$sql = "SELECT * FROM exterior WHERE modelnum ='".$_POST['modelnum']."'";
 
 $query = $pdo->query($sql);
 $results = $query->fetchAll();
+$i = 0;
 try{
   if($results){
     foreach($results as $row){
       echo "<form method='post'>
                 <div>
-                  <button onclick='changePics()' style='background-color:".$row['color'].";' class='colour' id='colour'>
+                  <button onclick='changePics(".$i.")' style='background-color:".$row['color'].";' class='colour' id='".$i."'>
+
                   </button>
                 </div>
             </form>";
-      echo $row['color'];
+      $i += 1;
     }
   }
   else{
