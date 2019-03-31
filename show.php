@@ -17,13 +17,13 @@
 	<?php
 		include "connection.php";
 
-		$queryStatement = 'SELECT name,image FROM model';
+		$queryStatement = 'SELECT id,name,image FROM model';
 		$query = $conn->query($queryStatement);
 		$results = $query->fetchAll();
 
 		foreach($results as $result){
 			echo '<div class="column">';
-			echo '<a href=showcolours.php?id=' . $result['id'] . '>';
+			echo '<a href=colourselect.php?id=' . $result['id'] . '>';
 			echo '<img src="' . $result['image'] . '" alt="' . $result['name'] . '" class = "image">';
 			echo '<div class="overlay">';
 			echo '<h4>' . $result['name'] . '</h4>';

@@ -1,6 +1,7 @@
 <?php
 require_once "connectdb.php";
-$sql = "SELECT * FROM exterior WHERE modelnum ='".$_POST['modelnum']."'";
+$id = $_GET[id];
+$sql = "SELECT * FROM exterior WHERE modelnum ='".$id."'";
 
 $query = $pdo->query($sql);
 $results = $query->fetchAll();
