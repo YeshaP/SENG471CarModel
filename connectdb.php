@@ -3,7 +3,7 @@
 try{
 
   $host = "localhost";
-  $db = "SENG471";
+  $db = "cadadb";
   $username = "root";
   $password = "mAyr0npakongpag*big";
 
