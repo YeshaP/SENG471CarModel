@@ -33,14 +33,21 @@ $queryStatement = 'SELECT name,image FROM model';
 $query = $conn->query($queryStatement);
 $results = $query->fetchAll();
 
-while($rows = $results){
-	$img_name = $rows['name'];
-	$img_src = $rows['image'];
+// while($rows = $results){
+// 	$img_name = $rows['name'];
+// 	$img_src = $rows['image'];
+// }
+
+foreach($results as $result){
+	$img_name = $result['name'];
+	$img_src = $result['image'];
 }
 ?>
 <div class="img-block">
-<img src="<?php echo $img_src; ?>" alt="" title="<?php echo $img_name; ?>" class="img-responsive" />
-<p><strong><?php echo $img_name; ?></strong></p>
+
+		<img src="<?php echo $img_src; ?>" alt="" title="<?php echo $img_src; ?>" class="img-responsive" />
+		<p><strong><?php echo $img_name; ?></strong></p>
+
 </div>
 <?php
 
