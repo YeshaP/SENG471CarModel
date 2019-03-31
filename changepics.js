@@ -5,12 +5,13 @@ function changePics() {
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
 
-          document.getElementById("innerdiv").innerHTML = this.responseText;
+          document.getElementById("exterior").innerHTML = this.responseText;
       }
   };
   xmlhttp.open("POST","testscript.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send();
+  xmlhttp.send("colour="+colorToHex(document.getElementById('colour').style.backgroundColor)
+                +"&name="+document.getElementById('colour'));
   // xmlhttp.send("school="+document.getElementById("school").value+"&format="+document.getElementById("format").value);
 }
 
@@ -43,3 +44,17 @@ function showColours(){
   xmlhttp.send("modelnum="+'2');
 
 }
+
+function colorToHex(color) {
+    if (color.substr(0, 1) === '#') {
+        return color;
+    }
+    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+
+    var red = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue = parseInt(digits[4]);
+
+    var rgb = blue | (green << 8) | (red << 16);
+    return digits[1] + '#' + rgb.toString(16).padStart(6, '0');
+};

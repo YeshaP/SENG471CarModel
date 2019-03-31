@@ -3,16 +3,17 @@ require_once "connectdb.php";
 $sql = "SELECT * FROM exterior WHERE modelnum =".$_POST['modelnum'];
 
 $query = $pdo->query($sql);
-$results = $query->fetchALL();
+$results = $query->fetchAll();
 try{
   if($results){
     foreach($results as $row){
       echo "<form method='post'>
                 <div>
-                  <button onclick='changePics()' style='background-color:".$row['color'].";' class='colour'>
+                  <button onclick='changePics()' style='background-color:".$row['color'].";' class='colour' id='colour'>
                   </button>
                 </div>
             </form>";
+      echo $row['color'];
     }
   }
   else{

@@ -30,8 +30,6 @@
       </div>
       <br><br>
       <div class="button-container" id="button-container">
-
-
       </div>
     </div>
 
