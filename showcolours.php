@@ -11,6 +11,7 @@ try{
       echo "<form method='post'>
                 <div>
                   <button onclick='changePics(".$i.")' style='background-color:".$row['color'].";' class='colour' id='".$i."'>
+
                   </button>
                 </div>
             </form>";
