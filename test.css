@@ -1,0 +1,40 @@
+.heading{
+  font-size: 30px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.colour{
+  width: 10px;
+  height: 10px;
+}
+
+.colourbutton{
+  margin-left: 20px;
+}
+
+.exterior{
+  width: 800px;
+  height: auto;
+}
+
+.interior{
+  width: 800px;
+  height: auto;
+}
+
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
