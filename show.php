@@ -10,7 +10,7 @@
 </div>
 
 <div class="subHeading">
-  <h2> Please select a car model from the choices below: </h2>
+  <h3> Please select a car model from the choices below: </h3>
 </div>
 
 <div class="row">
