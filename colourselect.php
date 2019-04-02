@@ -18,6 +18,7 @@
     </style>
   </head>
 
+
 <body onload="showExterior(), showColours()">
   <div id="header">
     <h1 class="heading"> Customize your Model </h1>

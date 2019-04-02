@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="modelPageDesign.css">
+<script src="changepics.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -15,16 +15,18 @@
 
 <div class="row">
 	<?php
-		include "connection.php";
+		require_once "connectdb.php";
 
 		$queryStatement = 'SELECT id,name,image FROM model';
-		$query = $conn->query($queryStatement);
+		$query = $pdo->query($queryStatement);
 		$results = $query->fetchAll();
 
 		foreach($results as $result){
+
 			echo '<div class="column">';
-			echo '<a href=colourselect.php?id=' . $result['id'] . '>';
-			echo '<img src="' . $result['image'] . '" alt="' . $result['name'] . '" class = "image">';
+			echo '<a href=colourselect.php?id='.$result['id'].'>';
+      // echo '<input type="hidden" id="modelnum">'.$result['id'].'</input>';
+			echo '<img src="' . $result['image'] . '" alt="' . $result['name'] . '" class = "image" onclick="assignVar('.$result['id'].')">';
 			echo '<div class="overlay">';
 			echo '<h4>' . $result['name'] . '</h4>';
 			echo '</div>';
