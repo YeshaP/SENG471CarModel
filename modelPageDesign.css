@@ -1,17 +1,21 @@
 
 h1{
-  color: black;
-  font-size: 40px;
-  text-align: center;
-  background-color: violet;
+  background: #666666;
+  color: #ffffff;
+  padding: 30px;
+  border-bottom: red 5px solid;
+
 }
 
-.subHeading{
-
+h3{
+  color: #ffffff;
+  padding: 30px;
 }
 
 * {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .column {
@@ -33,7 +37,7 @@ h1{
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
@@ -47,6 +51,8 @@ h1{
   transition: .5s ease;
   opacity:0;
   color: white;
+  font-family:sans-serif;
+
   font-size: 20px;
   padding: 20px;
   text-align: center;

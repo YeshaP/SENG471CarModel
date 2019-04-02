@@ -4,8 +4,8 @@ function changePics(colour) {
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-
           document.getElementById("exterior").innerHTML = this.responseText;
+          document.getElementById("interior").innerHTML = this.responseText;
       }
   };
   xmlhttp.open("POST","testscript.php",true);
@@ -24,10 +24,24 @@ function showExterior(){
           document.getElementById("exterior").innerHTML = this.responseText;
       }
   };
-  xmlhttp.open("POST","showpics.php",true);
+  xmlhttp.open("POST","showexteriorpics.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("modelnum="+'2');
 
+}
+
+function showInterior(){
+  event.preventDefault();
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("interior").innerHTML = this.responseText;
+    }
+  };
+  xmlhttp.open("POST", "showinteriorpics.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("modelnum="+'2');
 }
 
 function showColours(){
