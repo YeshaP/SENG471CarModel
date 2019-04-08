@@ -1,18 +1,34 @@
-function changePics(colour) {
+function changeExteriorPics(colour) {
   event.preventDefault();
 
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           document.getElementById("exterior").innerHTML = this.responseText;
-          document.getElementById("interior").innerHTML = this.responseText;
       }
   };
-  xmlhttp.open("POST","testscript.php",true);
+  xmlhttp.open("POST","changeexpics.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("colour="+colorToHex(document.getElementById(colour).style.backgroundColor)
                 +"&name="+colour+"&modelnum="+document.getElementById('modelnum').innerHTML);
 }
+
+function changeInteriorPics(colour) {
+  event.preventDefault();
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+
+          document.getElementById("interior").innerHTML = this.responseText;
+      }
+  };
+  xmlhttp.open("POST","changeinpics.php",true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("colour="+colorToHex(document.getElementById(colour).style.backgroundColor)
+                +"&name="+colour+"&modelnum="+document.getElementById('modelnum').innerHTML);
+}
+
 
 function showExterior(){
   event.preventDefault();
@@ -41,10 +57,10 @@ function showInterior(){
   };
   xmlhttp.open("POST", "showinteriorpics.php", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("modelnum="+'2');
+  xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML);
 }
 
-function showColours(){
+function showExColours(){
   event.preventDefault();
 
   xmlhttp = new XMLHttpRequest();
@@ -54,6 +70,21 @@ function showColours(){
       }
   };
   xmlhttp.open("POST","showcolours.php",true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML);
+
+}
+
+function showInColours(){
+  event.preventDefault();
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("button-container2").innerHTML = this.responseText;
+      }
+  };
+  xmlhttp.open("POST","showincolours.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML);
 

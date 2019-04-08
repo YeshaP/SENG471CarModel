@@ -3,7 +3,7 @@ require_once "connectdb.php";
 
 $id = $_POST['modelnum'];
 
-$sql = "SELECT * FROM exterior WHERE modelnum ='".$id."'";
+$sql = "SELECT * FROM interior WHERE modelnum ='".$id."'";
 
 $query = $pdo->query($sql);
 $results = $query->fetchAll();
@@ -13,7 +13,7 @@ try{
     foreach($results as $row){
       echo "<form method='post'>
                 <div>
-                  <button onclick='changeExteriorPics(".$i.")' style='background-color:".$row['color'].";' class='colour' id='".$i."'>
+                  <button onclick='changeInteriorPics(".$i.")' style='background-color:".$row['color'].";' class='colour' id='".$i."'>
 
                   </button>
                 </div>

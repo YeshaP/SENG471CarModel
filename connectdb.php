@@ -5,7 +5,7 @@ try{
   $host = "localhost";
   $db = "cadadb";
   $username = "root";
-  $password = "";
+  $password = "mAyr0npakongpag*big";
 
   $pdo = new PDO("mysql:host=$host;dbname=$db", "$username", "$password");
 
