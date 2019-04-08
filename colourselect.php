@@ -53,7 +53,7 @@ $carid = $_GET['id'];
     </div>
   </div>
 
-  <div>
+  <div class="save" >
     <button type="button" class="savebutton" onclick="saveSelection()">Save Selection</button>
   </div>
 
