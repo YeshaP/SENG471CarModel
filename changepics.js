@@ -21,6 +21,7 @@ function changeInteriorPics(colour) {
       if (this.readyState == 4 && this.status == 200) {
 
           document.getElementById("interior").innerHTML = this.responseText;
+          // console.log(colorToHex(document.getElementById(colour).style.backgroundColor));
       }
   };
   xmlhttp.open("POST","changeinpics.php",true);

@@ -7,7 +7,7 @@ $sql = "SELECT * FROM interior WHERE modelnum ='".$id."'";
 
 $query = $pdo->query($sql);
 $results = $query->fetchAll();
-$i = 0;
+$i = 5;
 try{
   if($results){
     foreach($results as $row){

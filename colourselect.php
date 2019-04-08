@@ -7,7 +7,7 @@ $carid = $_GET['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <script src="changepics.js" type="text/javascript"></script>
-    <!-- <link rel="stylesheet" href="format.css" type="text/css"> -->
+    <link rel="stylesheet" href="format.css" type="text/css">
     <style>
       .button-container form,
       .button-container form div {
@@ -21,16 +21,18 @@ $carid = $_GET['id'];
     </style>
   </head>
 
-<div class="subHeading">
-    <h3> Please customize your model using the colour palette provided: </h3>
-    </div>
+
 
 <body onload="showExterior(), showInterior(), showExColours(), showInColours()">
   <div id="header">
     <h1 class="heading"> Customize your Model </h1>
-    <h2 class="heading"> Model Number:</h2>
-    <h2 class="heading" id="modelnum"><?php echo $carid ?></h2>
-    <hr>
+    <!-- <h2 class="heading"> Model Number:</h2> -->
+    <!-- <hr> -->
+
+  </div>
+
+  <div class="subHeading">
+    <h3> Please customize your model using the colour palette provided: </h3>
   </div>
 
   <div class="row">
@@ -56,6 +58,7 @@ $carid = $_GET['id'];
   <!-- <div>
     <button type="button" onclick="saveSelection()">Save Selection</button>
   </div> -->
+  <h5 type="hidden" class="heading" id="modelnum"><?php echo $carid ?></h5>
 </body>
 
 
