@@ -11,7 +11,7 @@ try{
 
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  echo "Connected successfully from connectdb!<br>";
+  // echo "Connected successfully from connectdb!<br>";
   $pdo->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
 
 }catch(PDOException $e){

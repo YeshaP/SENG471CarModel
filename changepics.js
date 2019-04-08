@@ -1,10 +1,3 @@
-var carid;
-
-function assignVar(variable){
-  window.carid = variable;
-
-}
-
 function changePics(colour) {
   event.preventDefault();
 
@@ -18,7 +11,7 @@ function changePics(colour) {
   xmlhttp.open("POST","testscript.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("colour="+colorToHex(document.getElementById(colour).style.backgroundColor)
-                +"&name="+colour);
+                +"&name="+colour+"&modelnum="+document.getElementById('modelnum').innerHTML);
 }
 
 function showExterior(){
@@ -28,13 +21,12 @@ function showExterior(){
   xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
 
-        console.log("the id is: "+window.carid);
           document.getElementById("exterior").innerHTML = this.responseText;
       }
   };
   xmlhttp.open("POST","showpics.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("modelnum="+window.carid);
+  xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML);
 
 }
 
@@ -49,7 +41,23 @@ function showColours(){
   };
   xmlhttp.open("POST","showcolours.php",true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("modelnum="+'5');
+  xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML);
+
+}
+
+function saveSelection(){
+  event.preventDefault();
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("innerdiv").innerHTML = this.responseText;
+      }
+  };
+  xmlhttp.open("POST","saveselection.php",true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("modelnum="+document.getElementById('modelnum').innerHTML+
+                "&exterior="+document.getElementById('eximage').src);
 
 }
 

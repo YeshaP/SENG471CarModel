@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+$carid = $_GET['id'];
+?>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +25,8 @@
 <body onload="showExterior(), showColours()">
   <div id="header">
     <h1 class="heading"> Customize your Model </h1>
+    <h2 class="heading"> Model Number:</h2>
+    <h2 class="heading" id="modelnum"><?php echo $carid ?></h2>
     <hr>
   </div>
 
@@ -42,6 +47,11 @@
 
   <div id="innerdiv">
   </div>
+
+  <div>
+    <button type="button" onclick="saveSelection()">Save Selection</button>
+  </div>
 </body>
+
 
 </html>
