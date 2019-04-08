@@ -8,10 +8,6 @@ $sql = "SELECT image FROM exterior WHERE color= '".$colour."' AND modelnum='".$m
 $query = $pdo->query($sql, PDO::FETCH_ORI_FIRST);
 $results = $query->fetch();
 
-echo $sql."<br>";
-var_dump($results);
-echo "<br>".$colour;
-
 try{
   if($results){
 

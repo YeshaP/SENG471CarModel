@@ -52,12 +52,14 @@ $carid = $_GET['id'];
       </div>
     </div>
   </div>
+
+  <div>
+    <button type="button" class="savebutton" onclick="saveSelection()">Save Selection</button>
+  </div>
+
   <div id="innerdiv">
   </div>
 
-  <!-- <div>
-    <button type="button" onclick="saveSelection()">Save Selection</button>
-  </div> -->
   <h5 type="hidden" class="heading" id="modelnum"><?php echo $carid ?></h5>
 </body>
 
