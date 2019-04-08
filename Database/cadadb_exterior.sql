@@ -1,0 +1,57 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: cadadb
+-- ------------------------------------------------------
+-- Server version	5.7.21-log
+create database if not exists cadadb;
+use cadadb;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `exterior`
+--
+
+DROP TABLE IF EXISTS `exterior`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exterior` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `modelnum` int(10) unsigned NOT NULL,
+  `color` varchar(7) NOT NULL,
+  `image` varchar(2000) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `modelex_idx` (`modelnum`),
+  CONSTRAINT `modelex` FOREIGN KEY (`modelnum`) REFERENCES `model` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `exterior`
+--
+
+LOCK TABLES `exterior` WRITE;
+/*!40000 ALTER TABLE `exterior` DISABLE KEYS */;
+INSERT INTO `exterior` VALUES (1,2,'#ffffff','https://pics.porsche.com/rtt/iris?COSY-EU-100-17116bXqc6eP3Hi1qwT9HcnyInrHKxJTTPE3kUWFYRpwY4ENAXfUko69AFcLw1QjZoYn47uPi60JemN%25nBXHcAzr7C8AeEGewirQ915RmVzFgT0eZMx7Jr5YsQzpKZ%25spJAo2VK0HO2Sffv31%25J1jNdTqoaLxJK5AlaLWBWTdrSY4wqeZZwttDhQqszpQNBGYqZK0yIxFE3SvOnUeBJ8CGOj2KoPZFykO52mQRpg7R3bdMfcQw'),(2,2,'#8e0c0c','https://pics.porsche.com/rtt/iris?COSY-EU-100-17116bXqc6eP3Hi1qwT9HcnyInrHKxJTTPE3kUWFYRpwY4ENAXfUko69AFcLw1QjZoYn47uPi60JemN%25nBXHcAzr7C8AeEGewirQ919RmVzFgT0eZMx7Jr5YsQzpKZ%25spJAo2VK0HO2Sffv31%25J1jNdTqoaLxJK5AlaLWBWTdrSY4wqeZZwttDhQqszpQNBGYqZK0yIxFE3SvOnUeBJ8CGOj2KoPZFykO52mQRpg7R3bdMfcQw'),(3,2,'#000000','https://pics.porsche.com/rtt/iris?COSY-EU-100-17116bXqc6eP3Hi1qwT9HcnyInrHKxJTTPE3kUWFYRpwY4ENAXfUko69AFcLw1QjZoYn47uPi60JemN%25nBXHcAzr7C8AeEGewirQ93MRmVzFgT0eZMx7Jr5YsQzpKZ%25spJAo2VK0HO2Sffv31%25J1jNdTqoaLxJK5AlaLWBWTdrSY4wqeZZwttDhQqszpQNBGYqZK0yIxFE3SvOnUeBJ8CGOj2KoPZFykO52mQRpg7R3bdMfcQw'),(4,4,'#ffffff','https://nafta.starconnect-ce.i.daimler.com/iris/iris?COSY-EU-100-1713d0VXqaWFqtyO35PobzIDieWql9TQw2Mpxikzmxxom7ssM0uBI5HB2Z0iD%25W%25qjWm7ydHdhKYr8f%25vBcPEyLAX4lYa5Zg2rHCR2pn8zxBuoieou3M4sM8NTgUdij6PGHPVSe08BqtsBuCRcUA3vxXG51O1J0CwiwOBzkBZbA7l8FI5aIa9QCHd4Dkz8qpWm7iBFdhKIV4f%25vQ%25fEyLkXKlYamJ12rHh3spn8%25NMuoiyvG3M4YE7NTgJTKj6PO60VSebxVqtsI1KRcUQ2DxXGk1W1J0RMqwOBxTIZbA1s0FI5wRP9QCoTEDkzM0DWm7T3FdhKOVqf%25vbFfEyLI9UlYaQqn2rHvropn8LuMuoia3F3M4cD5NTgc9Dj6PX64VSeJEdqtsOfER1qN7vzZslYaIuG2rHJrHpn8IkduoirDF3M4nDCNTgo4qj6PMt9VSevW3qtsLiXRcUql7xXGJX71J0OJqwOBbnRZbAIN8FI5Qj39QCkGwDkzg6pWmtPT5Zl8LgdPtaSqvV7jdKzAyyaslUv1KUfxGsgOgjzjnCScrAoC%25Hybl6&&IMGT=A27&POV=be040%2Cpzm&crop=0,0,1920,1150&width=3840&height=2300'),(5,4,'#a81a1a','https://nafta.starconnect-ce.i.daimler.com/iris/iris?COSY-EU-100-1713d0VXqaWFqtyO35PobzIDieWql9TQw2Mpxikzmxxom7ssM0uBjBHB2Z0iD%25W%25qjWm7ydHdhKYr8f%25vBcPEyLAX4lYa5Zg2rHCR2pn8zxBuoieou3M4sM8NTgUdij6PGHPVSe08BqtsBuCRcUA3vxXG51O1J0CwiwOBzkBZbA7l8FI5aIa9QCHd4Dkz8qpWm7iBFdhKIV4f%25vQ%25fEyLkXKlYamJ12rHh3spn8%25NMuoiyvG3M4YE7NTgJTKj6PO60VSebxVqtsI1KRcUQ2DxXGk1W1J0RMqwOBxTIZbA1s0FI5wRP9QCoTEDkzM0DWm7T3FdhKOVqf%25vbFfEyLI9UlYaQqn2rHvropn8LuMuoia3F3M4cD5NTgc9Dj6PX64VSeJEdqtsOfER1qN7vzZslYaIuG2rHJrHpn8IkduoirDF3M4nDCNTgo4qj6PMt9VSevW3qtsLiXRcUql7xXGJX71J0OJqwOBbnRZbAIN8FI5Qj39QCkGwDkzg6pWmtPT5Zl8LgdPtaSqvV7jdKzAyyaslUv1KUfxGsgOgjzjnCScrAoC%25Hybl6&&IMGT=A27&POV=be040%2Cpzm&crop=0,0,1920,1150&width=3840&height=2300'),(6,4,'#000000','https://nafta.starconnect-ce.i.daimler.com/iris/iris?COSY-EU-100-1713d0VXqaWFqtyO35PobzIDieWql9TQw2Mpxikzmxxom7ssM0uBU3pB2Z0iD%25W%25qjWm7ydHdhKYr8f%25vBcPEyLAX4lYa5Zg2rHCR2pn8zxBuoieou3M4sM8NTgUdij6PGHPVSe08BqtsBuCRcUA3vxXG51O1J0CwiwOBzkBZbA7l8FI5aIa9QCHd4Dkz8qpWm7iBFdhKIV4f%25vQ%25fEyLkXKlYamJ12rHh3spn8%25NMuoiyvG3M4YE7NTgJTKj6PO60VSebxVqtsI1KRcUQ2DxXGk1W1J0RMqwOBxTIZbA1s0FI5wRP9QCoTEDkzM0DWm7T3FdhKOVqf%25vbFfEyLI9UlYaQqn2rHvropn8LuMuoia3F3M4cD5NTgc9Dj6PX64VSeJEdqtsOfER1qN7vzZslYaIuG2rHJrHpn8IkduoirDF3M4nDCNTgo4qj6PMt9VSevW3qtsLiXRcUql7xXGJX71J0OJqwOBbnRZbAIN8FI5Qj39QCkGwDkzg6pWmtPT5Zl8LgdPtaSqvV7jdKzAyyaslUv1KUfxGsgOgjzjnCScrAoC%25Hybl6&&IMGT=A27&POV=be040%2Cpzm&width=1536&height=640'),(7,5,'#ffffff','https://buildfoc.ford.com/dig/Lincoln/MKZ/2019/HD-FULL/Image[%7CLincoln%7CMKZ%7C2019%7C1%7C1.%7C500A.L5L..UG..88F.BRD.64J.99U.LEA.FWD.89Q.60N.]/EXT/4/vehicle.png'),(8,5,'#991313','https://buildfoc.ford.com/dig/Lincoln/MKZ/2019/HD-FULL/Image[%7CLincoln%7CMKZ%7C2019%7C1%7C1.%7C500A.L5L..RR..88F.BRD.64J.99U.LEA.FWD.89Q.60N.]/EXT/4/vehicle.png'),(9,5,'#000000','https://buildfoc.ford.com/dig/Lincoln/MKZ/2019/HD-FULL/Image[%7CLincoln%7CMKZ%7C2019%7C1%7C1.%7C500A.L5L..UM..88F.BRD.64J.99U.LEA.FWD.89Q.60N.]/EXT/4/vehicle.png');
+/*!40000 ALTER TABLE `exterior` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-03-29 23:14:44

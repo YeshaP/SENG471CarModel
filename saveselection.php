@@ -1,17 +1,17 @@
 <?php
 require_once "connectdb.php";
 
-$colour = $_POST['colour'];
+$eximage = $_POST['eximage'];
 $modelnum = $_POST['modelnum'];
 
-$sql = "SELECT image FROM exterior WHERE color= '".$colour."' AND modelnum='".$modelnum."' LIMIT 1";
+$sql = "INSERT INTO selection (customerid, modelnum, exterior) VALUES(0, '".$modelnum."', '".$eximage."')";
 $query = $pdo->query($sql, PDO::FETCH_ORI_FIRST);
 $results = $query->fetch();
 
 try{
   if($results){
 
-    echo "<img src=".$results['image']." class='carpic' alt='exterior' id='eximage'/>";
+    echo "<br>Your selection has been saved!<br>";
   }
   else{
 

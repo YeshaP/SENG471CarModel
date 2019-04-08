@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+$carid = $_GET['id'];
+?>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,13 +21,16 @@
     </style>
   </head>
 
-<body onload="showExterior(), showInterior(), showColours()">
-  <div class="heading">
-    <h1>Customize Your Model</h1>
-  </div>
-
-  <div class="subHeading">
+<div class="subHeading">
     <h3> Please customize your model using the colour palette provided: </h3>
+    </div>
+    
+<body onload="showExterior(), showInterior(), showColours()">
+  <div id="header">
+    <h1 class="heading"> Customize your Model </h1>
+    <h2 class="heading"> Model Number:</h2>
+    <h2 class="heading" id="modelnum"><?php echo $carid ?></h2>
+    <hr>
   </div>
 
   <div class="row">
@@ -44,9 +50,13 @@
       </div>
     </div>
   </div>
+  <div id="innerdiv">
+  </div>
 
-    <div id="innerdiv">
-    </div>
+  <div>
+    <button type="button" onclick="saveSelection()">Save Selection</button>
+  </div>
 </body>
+
 
 </html>

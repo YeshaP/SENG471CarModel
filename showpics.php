@@ -1,6 +1,8 @@
 <?php
 require_once "connectdb.php";
+
 $sql = "SELECT * FROM exterior WHERE modelnum =".$_POST['modelnum']." LIMIT 1";
+// echo $sql;
 
 $query = $pdo->query($sql, PDO::FETCH_ORI_FIRST);
 $results = $query->fetch();
