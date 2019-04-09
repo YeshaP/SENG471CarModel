@@ -25,7 +25,7 @@ $carid = $_GET['id'];
 
 <body onload="showExterior(), showInterior(), showExColours(), showInColours()">
   <div id="header">
-    <h1 class="heading"> Customize your Model </h1>
+    <h1 class="heading"> Customize Your Model </h1>
     <!-- <h2 class="heading"> Model Number:</h2> -->
     <!-- <hr> -->
 
